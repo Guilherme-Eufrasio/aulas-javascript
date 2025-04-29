@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimento 04</title>
+</head>
+<body>
+    <p id="saudacao" style="color: white;"></p>
+    <p id="horas" style="color: white;"></p>
+
+    <input type="number" id="pedir" name="pedir" onchange="hora()">
+    <input type="button" id="bottom" name="bottom" onclick="hora()" value="Horario">
+    <script>
+        function hora(){
+            const hora_atual = new Date();
+            var consulte_hora = document.getElementById('pedir').value
+            if (consulte_hora.length==0){
+                consulte_hora = hora_atual.getHours();
+            }
+            var saudacao = document.getElementById('saudacao')
+            var exibirh = document.getElementById('horas')
+
+            var dia="";
+
+
+            if (consulte_hora>= 6 && consulte_hora<= 12){
+                document.body.style.backgroundImage="url(../img/dia.jpg)"
+                document.body.style.backgroundSize="100%"
+                dia = "bom dia"
+            }
+            else if (consulte_hora>=1 && consulte_hora<=6){
+                document.body.style.backgroundImage="url(../img/madrugada.jpg)"
+                document.body.style.backgroundSize="100%"
+                dia = "boa madrugada"
+
+            }
+            else if (consulte_hora>=13 && consulte_hora<= 18){
+                document.body.style.backgroundImage="url(../img/tarde.jpg)"
+                document.body.style.backgroundSize="100%"
+                dia = "boa tarde"
+            }
+            else if (consulte_hora>= 19 && consulte_hora<= 23){
+                document.body.style.backgroundImage="url(../img/noite.jpg)"
+                document.body.style.backgroundSize="100%"
+                dia = "boa noite"
+            }
+            saudacao.innerHTML = dia
+            exibirh.innerHTML = `${consulte_hora}:${hora_atual.getMinutes()}`
+
+        }
+    </script>
+    
+</body>
+</html>

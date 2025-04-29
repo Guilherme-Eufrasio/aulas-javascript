@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividades para fazer</title>
+</head>
+<body>
+    <h1>Lista de coisas para fazer</h1>
+    <input type="text" id="tarefa" name="tarefa">
+    <input type="button" id="bottom" name="bottom" value="Adicionar" onclick="addtarefa()">
+    <ul id="lista">     
+    </ul>
+    <script>
+        function addtarefa(){
+            var task = document.getElementById("tarefa")
+            var list = document.getElementById("lista")
+            var tagli = document.createElement('li')
+            tagli.innerHTML = (`${task.value}`)
+            list.appendChild(tagli)
+        }
+    </script>
+</body>
