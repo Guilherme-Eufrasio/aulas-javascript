@@ -16,7 +16,8 @@
             var task = document.getElementById("tarefa")
             var list = document.getElementById("lista")
             var tagli = document.createElement('li')
-            tagli.innerHTML = (`${task.value}`)
+
+            tagli.innerHTML = (`<input type="checkbox" />${task.value}`)
             list.appendChild(tagli)
         }
     </script>
